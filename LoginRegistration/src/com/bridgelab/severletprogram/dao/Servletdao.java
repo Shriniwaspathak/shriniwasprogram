@@ -28,7 +28,6 @@ public class Servletdao {
 			ResultSet rs = stmt.executeQuery("select * from userdetails");
 			while (rs.next()) {
 				if (Username.equals(rs.getString(1)) && Password.equals(rs.getString(2)))
-					;
 				{
 					System.out.println(rs.getString(1) + "" + rs.getString(2));
 					test = true;
@@ -39,6 +38,7 @@ public class Servletdao {
 		}
 		return test;
 	}
+
 	public int doregistratin(UserDetails users) throws SQLException, ClassNotFoundException {
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/registration", "root", "1015");
@@ -56,7 +56,5 @@ public class Servletdao {
 		}
 		return set;
 
-		// int i=ps.executeUpdate();
 	}
-
 }

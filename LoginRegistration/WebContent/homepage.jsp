@@ -9,20 +9,22 @@
 <body>
 
 
-<% 
-response.setHeader("cache-control"," no-catch  , no-store , must-revalidate");
-response.setHeader("Pragma","no-catch");
-response.setHeader("Expire","no-cache");
+<%
+
 HttpSession session1=request.getSession();
-if(session1.getAttribute("userName")==null){
-	System.out.println("inside :"+ session1.getAttribute("name"));
+if(session1.getAttribute("username")==null)
+{
 	response.sendRedirect("login.jsp");
-}else{
-	System.out.println("outside :"+ session1.getAttribute("name"));
+	
 }
+	
+
 %>
 
-<h1>Welcome User!</h1>
+
+
+
+welcome
 <form action="logout-servlet">
 <input type="submit" value="logout">
  

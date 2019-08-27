@@ -7,9 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="servlet1" method="get">
-UserName:<input type="text"name="username" required><br/><br/>
-Password:<input type="password"name="password" required><br/><br/>
+
+<form action="userlogin" method="Post">
+UserName: <input type= "text" name= "username" required><br/><br/>
+Password: <input type= "password" name= "password" required><br/><br/>
 <input type="Submit" value="login">
 </form>
 </body>
