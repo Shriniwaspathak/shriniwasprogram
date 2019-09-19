@@ -30,7 +30,7 @@
 	<property name="host" value="smtp.gmail.com"/>
 	<property name="port" value="587"/>
 	<property name="username" value="rishuparasar5@gmail.com"/>
-	<property name="password" value="9006221015"/>
+	<property name="password" value="Rishu@123"/>
 	<property name="javaMailProperties">
 	<props >
 	<prop key="mail.smtp.auth">true</prop>
@@ -44,7 +44,7 @@
 		<property name="dataSource" ref="datasource"></property>
 	</bean>
 
-	<bean id="dao"
+	<bean id="dao"                                                  
 		class="com.bridgelab.loginregistration.dao.UserServiceDao">
 		<property name="template" ref="template"></property>
 	</bean>

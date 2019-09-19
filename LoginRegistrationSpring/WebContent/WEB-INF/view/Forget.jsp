@@ -10,7 +10,7 @@
 <body>
 <form:form action="emailSendingProcess"  modelAttribute="forgetpassword " method="post">
 EmailID:
-<input type="text" name="emailid" placeholder="emailid"/>
+<input type="text" name="emailid" placeholder="emailid" required="required"/>
 
 <input type="submit" value="enter">
 <br />

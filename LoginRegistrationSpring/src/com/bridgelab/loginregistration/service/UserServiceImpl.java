@@ -27,14 +27,15 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public RegistrationDetail validateUser(LoginDetail login) {
-		RegistrationDetail result = dao.dologin(login);
+	public int validateUser(LoginDetail login) {
+		int result = dao.dologin(login);
+		System.out.println(result);
 		return result;
-
 	}
 
 	@Override
 	public void setPassword(String password, String emailid) {
+		
 		dao.setpasswordtodatabase(password, emailid);
 
 	}

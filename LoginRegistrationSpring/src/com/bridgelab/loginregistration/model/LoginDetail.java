@@ -1,8 +1,16 @@
 package com.bridgelab.loginregistration.model;
 
 public class LoginDetail {
+	private String name;
 	private String email;
 	private String password;
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public String getEmail() {
 		return email;
 	}
@@ -15,4 +23,5 @@ public class LoginDetail {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
 }

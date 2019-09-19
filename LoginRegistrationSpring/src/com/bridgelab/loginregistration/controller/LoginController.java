@@ -32,14 +32,13 @@ public class LoginController {
 			@ModelAttribute("login") LoginDetail login) {
 
 		ModelAndView mav = null;
-		RegistrationDetail registerdetail = service.validateUser(login);
-		if (registerdetail != null) {
+		int registerdetail = service.validateUser(login);
+		if (registerdetail > 0) {
 			mav = new ModelAndView("welcome");
-			mav.addObject("username", registerdetail.getUsername());
-			
+			mav.addObject("username", login.getName());
+
 		} else {
 			mav = new ModelAndView("errorpage");
-			
 		}
 		return mav;
 	}

@@ -12,7 +12,7 @@
 		action="registerProcess" method="post">
 		<table align="center">
 			<tr>
-				<td><form:label path="username">Username</form:label></td>
+				<td><form:label path="username" >Username</form:label></td>
 				<td><form:input path="username" name="username" id="username" />
 				</td>
 			</tr>

@@ -14,7 +14,8 @@ import com.bridgelab.loginregistration.model.RegistrationDetail;
 import com.bridgelab.loginregistration.service.UserServiceImpl;
 
 @Controller
-public class RegistrationController {
+@RequestMapping(value = "/UserRegistration")
+public class Registration2Controller {
 	@Autowired
 	public UserServiceImpl service;
 
@@ -25,7 +26,7 @@ public class RegistrationController {
 		return mav;
 	}
 
-	@RequestMapping(value = "/registerProcess", method = RequestMethod.POST)
+	@RequestMapping(value = "/UserRegistration/registerProcess1", method = RequestMethod.POST)
 	public ModelAndView addUser(HttpServletRequest request, HttpServletResponse response,
 			@ModelAttribute("registerdetail") RegistrationDetail registerdetail) {
 		service.register(registerdetail);

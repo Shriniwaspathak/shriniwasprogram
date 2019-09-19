@@ -23,8 +23,7 @@ public class EmailSender {
 
 	public ModelAndView showLogin(@ModelAttribute ForgetPassword forgetpassword) {
 		ModelAndView mv = new ModelAndView("Forget");
-		// mv.addObject("forgetpassword", forgetpassword);
-		System.out.println("reached");
+		
 		return mv;
 	}
 
@@ -34,19 +33,20 @@ public class EmailSender {
 	public ModelAndView sendEmail(@ModelAttribute ForgetPassword forgetpassword) {
 
 		emailid = forgetpassword.getEmailid();
-
+		if(emailid==null) {
+			ModelAndView mv=new ModelAndView();
+			mv.addObject("invalidCredential",forgetpassword);
+		}
 		int result = service.checkEmail(emailid);
-		System.out.println(result);
+
 		if (result > 0) {
 			otpgenerate = "abcdefgh";
-			System.out.println("1234");
 			service.sendEmail(emailid, otpgenerate);
 			ModelAndView mv = new ModelAndView("enterpassword");
 			mv.addObject("forgetpassword", forgetpassword);
 			return mv;
 		} else {
 			ModelAndView mv2 = new ModelAndView("invalidCredentials");
-			System.out.println("coming inside");
 			return mv2;
 		}
 	}
